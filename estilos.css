@@ -1,0 +1,233 @@
+/* Reset básico para márgenes y padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    /* Espacio entre el logo y el menú */
+    align-items: center;
+    padding: 18px;
+    /* Menos padding para reducir la altura */
+    background-color: #c1322c;
+    color: #fff;
+
+    font-family: "Sancreek", serif;
+    font-weight: 400;
+    font-style: normal;
+    /* Hace que el header sea fijo */
+    width: 100%;
+    position: fixed;
+    z-index: 1000;
+}
+
+/* Logo */
+header .logo h1 {
+    font-size: 24px;
+}
+
+/* Menú */
+nav.menu ul {
+    list-style: none;
+    display: flex;
+}
+
+nav.menu ul li {
+    margin-left: 15px;
+}
+
+nav.menu ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 20px;
+}
+
+nav.menu ul li a:hover {
+    color: #edd074;
+    /* Color de hover */
+}
+
+/* Icono hamburguesa */
+.hamburger {
+    display: none;
+    font-size: 26px;
+    cursor: pointer;
+    z-index: 1001;
+    /* Por encima del menú */
+}
+
+/* Menú móvil: pantalla completa + animación */
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -100vw;
+    /* Oculto fuera de pantalla */
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.96);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: right 0.4s ease-in-out;
+    z-index: 1000;
+}
+
+.mobile-menu.open {
+    right: 0;
+}
+
+.mobile-menu ul {
+    list-style: none;
+    text-align: center;
+}
+
+.mobile-menu a {
+    display: block;
+    padding: 20px;
+    font-size: 24px;
+    color: white;
+    text-decoration: none;
+}
+
+/* Contenedor principal que ocupa toda la página */
+.container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Video de fondo, se ajusta a toda la pantalla */
+.background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    filter: brightness(0.2);
+    /*Brillo reducido al 20% */
+}
+
+/* Logo centrado en la página */
+.logo {
+    position: relative;
+    z-index: 1;
+}
+
+.logo img {
+    width: 330px;
+    /* Ajusta según el tamaño del logo */
+    height: 370px;
+    /* height: auto; */
+}
+
+/* Plataformas musicales más arriba */
+.platforms {
+    display: flex;
+    gap: 15px;
+    margin-top: -50px;
+    z-index: 10;
+}
+
+.platforms a {
+    color: #fff;
+    font-size: 25px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.3s ease;
+    /* Transición suave */
+}
+
+/* Asegurar que los íconos hereden color del enlace */
+.platforms a i {
+    color: inherit;
+    transition: inherit;
+}
+
+.platforms a:hover {
+    transform: scale(1.1);
+    /* Efecto zoom pequeño */
+}
+
+/* Facebook */
+.platforms a.facebook:hover {
+    color: #145DBF;
+}
+
+/* Instagram */
+.platforms a.instagram:hover {
+    color: #C13549;
+}
+
+/* Spotify */
+.platforms a.spotify:hover {
+    color: #1DB954;
+    /* verde característico de Spotify */
+}
+
+/* YouTube */
+.platforms a.youtube:hover {
+    color: #CC0000;
+}
+
+/* Botón "Saber más" */
+.more-info-button {
+    position: relative;
+    z-index: 1;
+    background-color: #ff4c00;
+    /* Color de fondo */
+    color: white;
+    padding: 15px 30px;
+    font-size: 18px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.more-info-button:hover {
+    background-color: #e04b00;
+}
+
+/* Sección siguiente a la que se desplazará el botón */
+.next-section {
+    padding: 50px;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+.next-section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.next-section p {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+/* Responsive: hamburguesa visible y menú desktop oculto */
+@media (max-width: 768px) {
+    .menu {
+        display: none;
+    }
+
+    .hamburger {
+        display: block;
+    }
+}

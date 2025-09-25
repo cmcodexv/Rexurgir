@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rexurgir</title>
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Fuente -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Burned&family=Sancreek&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <!-- <header>
+        <div class="logo">
+            <h1>RXGR</h1>
+        </div>
+        <nav class="menu">
+            <ul>
+                <li><a href="#">INICIO</a></li>
+                <li><a href="#">HISTORIA</a></li>
+                <li><a href="#">MÚSICA</a></li>
+                <li><a href="#">CONCIERTOS</a></li>
+                <li><a href="#">CONTACTO</a></li>
+            </ul>
+        </nav>
+    </header> -->
+
+    <!-- HEADER -->
+    <header>
+        <div class="logo">
+            <h1>RXGR</h1>
+        </div>
+
+        <!-- Menú de navegación para escritorio -->
+        <nav class="menu">
+            <ul>
+                <li><a href="#">INICIO</a></li>
+                <li><a href="#">HISTORIA</a></li>
+                <li><a href="#">MÚSICA</a></li>
+                <li><a href="#">CONCIERTOS</a></li>
+                <li><a href="#">CONTACTO</a></li>
+            </ul>
+        </nav>
+
+        <!-- Icono de hamburguesa (solo visible en móvil) -->
+        <div class="hamburger" id="hamburger">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+
+        <!-- Menú móvil oculto inicialmente -->
+        <div class="mobile-menu" id="mobileMenu">
+            <ul>
+                <li><a href="#">INICIO</a></li>
+                <li><a href="#">HISTORIA</a></li>
+                <li><a href="#">MÚSICA</a></li>
+                <li><a href="#">CONCIERTOS</a></li>
+                <li><a href="#">CONTACTO</a></li>
+            </ul>
+        </div>
+    </header>
+    <!-- Contenedor principal con el fondo de video -->
+    <section class="container">
+        <!-- Video de fondo -->
+        <video autoplay muted loop class="background-video">
+            <source src="vid/home.mp4" type="video/mp4">
+            Tu navegador no soporta el video.
+        </video>
+
+        <!-- Logo en el centro -->
+        <div class="logo">
+            <img src="img/logo.png" alt="Logo">
+        </div>
+
+        <!-- Plataformas musicales abajo -->
+        <div class="platforms">
+            <a href="https://www.facebook.com" target="_blank" class="facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com" target="_blank" class="instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.spotify.com" target="_blank" class="spotify"><i class="fa-brands fa-spotify"></i></a>
+            <a href="https://www.youtube.com" target="_blank" class="youtube"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+
+
+        <!-- Botón "Saber más" para bajar a la siguiente sección -->
+        <!-- <a href="#next-section" class="more-info-button">Saber más</a> -->
+    </section>
+
+    <section id="next-section" class="next-section">
+        <h2>Más Información</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias repellendus delectus mollitia quas debitis eum
+            in recusandae fugit ullam tempora magnam, sequi illo, sint doloribus quis similique provident non dolor!</p>
+    </section>
+</body>
+<!-- JS -->
+<script src="js/menu.js" defer></script>
+
+</html>
