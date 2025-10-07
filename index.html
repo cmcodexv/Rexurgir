@@ -7,29 +7,18 @@
     <title>Rexurgir</title>
     <link rel="stylesheet" href="estilos.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- Fuente -->
+    <!-- Fuente H2 -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rubik+Burned&family=Sancreek&display=swap" rel="stylesheet">
+    <!-- Fuente letras -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap" rel="stylesheet">
 
 </head>
 
 <body>
-    <!-- <header>
-        <div class="logo">
-            <h1>RXGR</h1>
-        </div>
-        <nav class="menu">
-            <ul>
-                <li><a href="#">INICIO</a></li>
-                <li><a href="#">HISTORIA</a></li>
-                <li><a href="#">MÚSICA</a></li>
-                <li><a href="#">CONCIERTOS</a></li>
-                <li><a href="#">CONTACTO</a></li>
-            </ul>
-        </nav>
-    </header> -->
-
     <!-- HEADER -->
     <header>
         <div class="logo">
@@ -39,11 +28,11 @@
         <!-- Menú de navegación para escritorio -->
         <nav class="menu">
             <ul>
-                <li><a href="#">INICIO</a></li>
-                <li><a href="#">HISTORIA</a></li>
+                <li><a href="#portada">INICIO</a></li>
+                <li><a href="#historia">HISTORIA</a></li>
                 <li><a href="#">MÚSICA</a></li>
                 <li><a href="#">CONCIERTOS</a></li>
-                <li><a href="#">CONTACTO</a></li>
+                <li><a href="#contacto">CONTACTO</a></li>
             </ul>
         </nav>
 
@@ -55,16 +44,16 @@
         <!-- Menú móvil oculto inicialmente -->
         <div class="mobile-menu" id="mobileMenu">
             <ul>
-                <li><a href="#">INICIO</a></li>
-                <li><a href="#">HISTORIA</a></li>
+                <li><a href="#portada">INICIO</a></li>
+                <li><a href="#historia">HISTORIA</a></li>
                 <li><a href="#">MÚSICA</a></li>
                 <li><a href="#">CONCIERTOS</a></li>
-                <li><a href="#">CONTACTO</a></li>
+                <li><a href="#contacto">CONTACTO</a></li>
             </ul>
         </div>
     </header>
     <!-- Contenedor principal con el fondo de video -->
-    <section class="container">
+    <section id="portada" class="container">
         <!-- Video de fondo -->
         <video autoplay muted loop class="background-video">
             <source src="vid/home.mp4" type="video/mp4">
@@ -83,16 +72,43 @@
             <a href="https://www.spotify.com" target="_blank" class="spotify"><i class="fa-brands fa-spotify"></i></a>
             <a href="https://www.youtube.com" target="_blank" class="youtube"><i class="fa-brands fa-youtube"></i></a>
         </div>
-
-
         <!-- Botón "Saber más" para bajar a la siguiente sección -->
         <!-- <a href="#next-section" class="more-info-button">Saber más</a> -->
     </section>
+    <section id="historia" class="seccion-historia">
+        <h2>HISTORIA</h2>
+        <div class="historia">
+            <div class="historia-imagen">
+                <img src="img/historia2.jpeg" alt="Historia">
+            </div>
+            <div class="historia-texto">
+                <p>Formada en el año 2019 en los suburbios de Managua, Rexurgir nació de la necesidad de expresar
+                    el descontento con un sistema que no escucha. Influenciados por el punk de los '80, el hardcore
+                    neoyorquino y las escenas locales underground, comenzaron tocando en garajes, centros culturales y
+                    bares donde podían armar un set rápido y ruidoso. <br><br>
+                    La banda encontró su identidad en la energía cruda del directo, letras cargadas de rabia y un sonido
+                    veloz y agresivo. A lo largo de los años, lanzaron dos EPs y un álbum de estudio que los llevó a
+                    girar por varias ciudades del país, siempre fieles a su ética DIY (hazlo tú mismo) y a la comunidad
+                    que los vio crecer.</p>
+            </div>
 
-    <section id="next-section" class="next-section">
-        <h2>Más Información</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias repellendus delectus mollitia quas debitis eum
-            in recusandae fugit ullam tempora magnam, sequi illo, sint doloribus quis similique provident non dolor!</p>
+        </div>
+    </section>
+    <section id="contacto" class="seccion-contacto">
+        <h2>CONTACTO</h2>
+        <div class="formulario-contacto">
+            <form action="#" method="post">
+                <div class="campo">
+                    <label for="email">Correo electrónico:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="campo">
+                    <label for="mensaje">Mensaje:</label>
+                    <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+                </div>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
     </section>
 </body>
 <!-- JS -->
