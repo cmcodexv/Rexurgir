@@ -21,9 +21,8 @@ header {
     /* Espacio entre el logo y el menú */
     align-items: center;
     padding: .6rem 1.5rem;
-    /* Menos padding para reducir la altura */
-    /* background-color: #c1322c; */
     background-color: transparent;
+    background-color: #831c18;
     color: #fff;
     font-family: "Sancreek", serif;
     font-style: normal;
@@ -32,12 +31,11 @@ header {
     position: fixed;
     z-index: 1000;
     height: 4.8rem;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-header.scrolled {
-    background-color: #831c18;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+header.transparent {
+    background-color: transparent;
 }
 
 /* Logo */
@@ -155,7 +153,6 @@ en las media queries y solo definir tamaños para cada una*/
     object-fit: cover;
     z-index: -1;
     filter: brightness(0.2);
-    /*Brillo reducido al 20% */
 }
 
 /* Logo centrado en la página */
@@ -236,7 +233,7 @@ h2 {
     padding: 25px;
     text-align: center;
     background: linear-gradient(135deg, #2b2b3a, #1c1c1c, #121212);
-    box-shadow: 0 -0.625rem 1.875rem rgba(0, 0, 0, 0.2);
+    box-shadow: 0 -0.625rem 1.875rem rgba(22, 20, 20, 0.2);
     z-index: 1;
 }
 
@@ -353,6 +350,108 @@ button:hover {
     opacity: 0;
     transform: translateY(20px);
 }
+
+/* SECCIÓN MÚSICA */
+
+/* .musica {
+    height: 100vh;
+    padding: 25px;
+    text-align: center;
+    background-image: url(img/fondo-musica.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1;
+} */
+
+.musica {
+    position: relative;
+    height: 100vh;
+    padding: 25px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.musica::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url(img/fondo-musica.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: brightness(0.8);
+    z-index: 1;
+}
+
+/* Aseguramos que el contenido esté encima */
+.musica>* {
+    position: relative;
+    z-index: 1;
+}
+
+
+.panel-musica {
+    display: flex;
+    /* Activa Flexbox */
+    align-items: center;
+    /* Centra verticalmente (opcional) */
+    justify-content: center;
+    /* Centra horizontalmente (opcional) */
+    gap: 1rem;
+    /* Espacio entre imagen y texto */
+    padding: 1rem;
+
+}
+
+.musica-spotify,
+.musica-discografia {
+    flex: 1;
+    /* Ocupa 50% cada uno */
+}
+
+.iframe-Spotify {
+    width: 100%;
+    border-radius: .625rem;
+    height: 25rem;
+}
+
+.grid-discos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.disco {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+    max-width: 150px;
+}
+
+.disco img {
+    width: 100%;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.disco img:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+}
+
+.disco p {
+    margin-top: 0.5rem;
+    font-family: "Oswald", sans-serif;
+    color: #edd074;
+    font-size: .9375rem;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
 
 /* Animación */
 @keyframes fadeInUp {

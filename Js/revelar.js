@@ -1,19 +1,17 @@
-window.addEventListener('load', () => {
-  const elementos = document.querySelectorAll('#historia .elemento');
+// REVELAR ELEMENTOS
 
-  requestAnimationFrame(() => {
-    elementos.forEach(el => el.classList.add('hidden'));
-  });
+window.addEventListener('DOMContentLoaded', () => {
+  const elementos = document.querySelectorAll('.elemento');
 
-  const observer = new IntersectionObserver((entries) => {
+  // Oculta todos al inicio
+  elementos.forEach(el => el.classList.add('hidden'));
+
+  const observador = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.remove('hidden');
-      } else {
-        entry.target.classList.add('hidden');
-      }
+      entry.target.classList.toggle('hidden', !entry.isIntersecting);
     });
   }, { threshold: 0.1 });
 
-  elementos.forEach(el => observer.observe(el));
+  elementos.forEach(el => observador.observe(el));
 });
+

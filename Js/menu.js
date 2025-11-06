@@ -12,7 +12,7 @@ hamburger.addEventListener('click', () => {
     icon.classList.toggle('fa-bars', !isOpen);
     icon.classList.toggle('fa-xmark', isOpen);
 
-    // 🧱 Bloquear o permitir scroll del body
+    // scroll del body
     document.body.classList.toggle('no-scroll', isOpen);
 });
 
@@ -23,7 +23,7 @@ links.forEach(link => {
         icon.classList.add('fa-bars');
         icon.classList.remove('fa-xmark');
 
-        // ✅ También quitar bloqueo de scroll
+        // quitar bloqueo de scroll
         document.body.classList.remove('no-scroll');
     });
 });
