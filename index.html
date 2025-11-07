@@ -25,9 +25,7 @@
             <a href="#portada">
                 <img rel="preload" src="img/cabecera.png" alt="Logo">
             </a>
-
         </div>
-
         <!-- Menú de navegación para escritorio -->
         <nav class="menu">
             <ul>
@@ -49,7 +47,7 @@
             <ul>
                 <li><a href="#portada">INICIO</a></li>
                 <li><a href="#historia">HISTORIA</a></li>
-                <li><a href="#">MÚSICA</a></li>
+                <li><a href="#musica">MÚSICA</a></li>
                 <li><a href="#">CONCIERTOS</a></li>
                 <li><a href="#contacto">CONTACTO</a></li>
             </ul>
@@ -116,6 +114,10 @@
                 </div>
                 <!-- IMÁGENES -->
                 <div class="musica-discografia elemento">
+                    <div class="carrusel-container"></div>
+                    <button class="btn-prev">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
                     <div class="grid-discos">
                         <div class="disco">
                             <img src="img/anima.jpg" alt="Anima">
@@ -134,7 +136,7 @@
                             <p>Doppelgänger</p>
                         </div>
                         <div class="disco">
-                            <img src="img/ciegos_sin_razon.jpg" alt="Ciegos • Sin Razón">
+                            <img src="img/ciegos-sin-razon.jpg" alt="Ciegos • Sin Razón">
                             <p>Ciegos • Sin Razón</p>
                         </div>
                         <div class="disco">
@@ -142,8 +144,12 @@
                             <p>Números en la memoria</p>
                         </div>
                     </div>
+                    <button class="btn-next">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
                 </div>
             </div>
+        </div>
         </div>
     </section>
     <section id="contacto" class="seccion contacto">
@@ -168,5 +174,6 @@
 <script src="js/menu.js" defer></script>
 <script src="js/revelar.js" defer></script>
 <script src="js/ancla.js" defer></script>
+<script src="js/carrusel.js" defer></script>
 
 </html>

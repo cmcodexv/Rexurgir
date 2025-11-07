@@ -116,12 +116,11 @@ en las media queries y solo definir tamaños para cada una*/
 }
 
 /* Secciones */
-
 .seccion {
     position: sticky;
     width: 100%;
     top: 0;
-    height: 100vh;
+    /* height: 100vh;  */
     display: flex;
     align-items: center;
 }
@@ -134,6 +133,7 @@ en las media queries y solo definir tamaños para cada una*/
 
 /* Contenedor principal que ocupa toda la página */
 .portada {
+    height: 100vh;
     overflow: hidden;
     flex-direction: column;
     justify-content: center;
@@ -324,19 +324,6 @@ h2 {
     resize: vertical;
 }
 
-button {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    padding: 10px 1.25rem;
-    border-radius: 4px;
-    font-size: 1rem;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #0056b3;
-}
 
 /* EFECTO DE ELEMENTOS AL CAMBIAR DE SECCIÓN */
 .elemento {
@@ -352,18 +339,6 @@ button:hover {
 }
 
 /* SECCIÓN MÚSICA */
-
-/* .musica {
-    height: 100vh;
-    padding: 25px;
-    text-align: center;
-    background-image: url(img/fondo-musica.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    z-index: 1;
-} */
-
 .musica {
     position: relative;
     height: 100vh;
@@ -423,6 +398,16 @@ button:hover {
     gap: 1rem;
 }
 
+.carrusel-container {
+    position: relative;
+    width: 100%;
+}
+
+.btn-prev,
+.btn-next {
+    display: none;
+}
+
 .disco {
     display: flex;
     flex-direction: column;
@@ -433,7 +418,7 @@ button:hover {
 
 .disco img {
     width: 100%;
-    border-radius: 8px;
+    border-radius: .625rem;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -513,11 +498,13 @@ button:hover {
         font-size: 3em;
     }
 
+    /* HISTORIA */
     .panel-historia {
         flex-direction: column;
         /* Para que texto quede arriba */
         align-items: stretch;
         /* Ocupa todo el ancho */
+        gap: 1.50rem;
     }
 
     .historia-imagen,
@@ -532,8 +519,75 @@ button:hover {
         font-size: 2rem;
         /* Texto un poco más pequeño para móvil */
     }
-}
 
+    /* SECCIÓN MÚSICA */
+    .panel-musica {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1.75rem;
+    }
+
+    .musica-spotify,
+    .musica-discografia {
+        flex: unset;
+        width: 100%;
+    }
+
+    .iframe-Spotify {
+        height: 36rem;
+    }
+
+    .grid-discos {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        justify-content: flex-start;
+        padding: 0 .625rem;
+        gap: 1rem;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .disco {
+        flex: 0 0 50%;
+        scroll-snap-align: start;
+        max-width: none;
+    }
+
+    .grid-discos::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Flechas activadas solo en esta vista */
+    .btn-prev,
+    .btn-next {
+        display: block;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(0, 0, 0, 0.4);
+        color: white;
+        border: none;
+        font-size: 3rem;
+        cursor: pointer;
+        z-index: 10;
+        padding: 0.5rem 0.75rem;
+        transition: background 0.3s;
+    }
+
+    .btn-prev {
+        left: 0.5rem;
+    }
+
+    .btn-next {
+        right: 1.5rem;
+    }
+
+    .disco p {
+        font-size: 2rem;
+    }
+
+
+}
 
 /* Móviles */
 @media (max-width: 768px) {
@@ -570,9 +624,6 @@ button:hover {
         /* Ocupa todo el ancho */
     }
 
-    .contenido-seccion {
-        margin-top: -2em;
-    }
 
     .historia-imagen,
     .historia-texto {
@@ -587,5 +638,99 @@ button:hover {
         /* Texto un poco más pequeño para móvil */
     }
 
+    .musica {
+        height: 150vh;
+    }
 
+    /* SECCIÓN MÚSICA */
+    .panel-musica {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .musica-spotify {
+        flex: unset;
+        width: 100%;
+    }
+
+    .iframe-Spotify {
+        height: 45.625rem;
+    }
+
+    .musica-discografia {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+    }
+
+    .grid-discos {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        scroll-padding-left: 0;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        scroll-behavior: smooth;
+        gap: 0;
+        /* eliminamos gap que rompe el ancho */
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        /* respeta el ancho del contenedor */
+        scroll-padding-left: 0;
+        box-sizing: border-box;
+
+    }
+
+    .grid-discos::-webkit-scrollbar {
+        display: none;
+    }
+
+    .disco {
+        flex: 0 0 100%;
+        scroll-snap-align: start;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+        width: 100%;
+        /* max-width: 21.875rem; */
+    }
+
+    .disco img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        display: block;
+        border-radius: 0.5rem;
+        padding: 0 0.25rem;
+        max-width: 21.875rem;
+    }
+
+    .disco p {
+        font-size: 1rem;
+    }
+
+    /* Flechas activadas solo en esta vista */
+    .btn-prev,
+    .btn-next {
+        display: block;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(0, 0, 0, 0.4);
+        color: white;
+        border: none;
+        font-size: 1.7rem;
+    }
+
+    .btn-prev {
+        left: 0.5rem;
+    }
+
+    .btn-next {
+        right: 0.5rem;
+    }
 }
