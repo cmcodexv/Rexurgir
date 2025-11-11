@@ -230,7 +230,6 @@ h2 {
 /* Sección siguiente a la que se desplazará el botón */
 .historia {
     height: 100vh;
-    padding: 25px;
     text-align: center;
     background: linear-gradient(135deg, #2b2b3a, #1c1c1c, #121212);
     box-shadow: 0 -0.625rem 1.875rem rgba(22, 20, 20, 0.2);
@@ -243,15 +242,10 @@ h2 {
 
 .panel-historia {
     display: flex;
-    /* Activa Flexbox */
     align-items: center;
-    /* Centra verticalmente (opcional) */
     justify-content: center;
-    /* Centra horizontalmente (opcional) */
     gap: 1.25rem;
-    /* Espacio entre imagen y texto */
     padding: 1.25rem;
-
 }
 
 .historia-imagen,
@@ -264,7 +258,7 @@ h2 {
     width: 100%;
     height: auto;
     display: block;
-    filter: brightness(0.6);
+    filter: brightness(0.5);
 }
 
 .historia-texto p {
@@ -274,7 +268,7 @@ h2 {
     font-style: normal;
     text-align: justify;
     /* Justifica el texto */
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     color: #edd074;
 }
 
@@ -342,7 +336,6 @@ h2 {
 .musica {
     position: relative;
     height: 100vh;
-    padding: 25px;
     text-align: center;
     overflow: hidden;
 }
@@ -353,9 +346,8 @@ h2 {
     inset: 0;
     background-image: url(img/fondo-musica.jpg);
     background-size: cover;
-    background-position: center;
     background-repeat: no-repeat;
-    filter: brightness(0.8);
+    filter: brightness(0.5);
     z-index: 1;
 }
 
@@ -373,8 +365,7 @@ h2 {
     /* Centra verticalmente (opcional) */
     justify-content: center;
     /* Centra horizontalmente (opcional) */
-    gap: 1rem;
-    /* Espacio entre imagen y texto */
+    gap: .5rem;
     padding: 1rem;
 
 }
@@ -395,7 +386,7 @@ h2 {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 1rem;
+    gap: .5rem;
 }
 
 .carrusel-container {
@@ -412,8 +403,7 @@ h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 30%;
-    max-width: 150px;
+    max-width: 10rem;
 }
 
 .disco img {
@@ -452,7 +442,7 @@ h2 {
 }
 
 /* Tablets */
-@media (max-width: 1024px) and (min-width: 768px) {
+@media (max-width: 1024px) and (min-width: 760px) {
     header {
         height: 8rem;
     }
@@ -498,7 +488,12 @@ h2 {
         font-size: 3em;
     }
 
+
     /* HISTORIA */
+    .historia {
+        min-height: 80rem;
+    }
+
     .panel-historia {
         flex-direction: column;
         /* Para que texto quede arriba */
@@ -521,6 +516,14 @@ h2 {
     }
 
     /* SECCIÓN MÚSICA */
+    .musica::before {
+        background-position: center;
+    }
+
+    .musica {
+        min-height: 80rem;
+    }
+
     .panel-musica {
         flex-direction: column;
         align-items: stretch;
@@ -557,6 +560,11 @@ h2 {
         display: none;
     }
 
+    .disco img:hover {
+        box-shadow: none;
+        transform: none;
+    }
+
     /* Flechas activadas solo en esta vista */
     .btn-prev,
     .btn-next {
@@ -590,7 +598,7 @@ h2 {
 }
 
 /* Móviles */
-@media (max-width: 768px) {
+@media (max-width: 760px) {
     .menu {
         display: none;
     }
@@ -617,6 +625,10 @@ h2 {
         font-size: 2em;
     }
 
+    .historia {
+        min-height: 55rem;
+    }
+
     .panel-historia {
         flex-direction: column;
         /* Para que texto quede arriba */
@@ -640,9 +652,14 @@ h2 {
 
     .musica {
         height: 150vh;
+        min-height: 80rem;
     }
 
     /* SECCIÓN MÚSICA */
+    .musica::before {
+        background-position: center;
+    }
+
     .panel-musica {
         flex-direction: column;
         align-items: stretch;
@@ -673,14 +690,11 @@ h2 {
         -webkit-overflow-scrolling: touch;
         scroll-behavior: smooth;
         gap: 0;
-        /* eliminamos gap que rompe el ancho */
         margin: 0;
         padding: 0;
         width: 100%;
-        /* respeta el ancho del contenedor */
         scroll-padding-left: 0;
         box-sizing: border-box;
-
     }
 
     .grid-discos::-webkit-scrollbar {
@@ -695,22 +709,24 @@ h2 {
         align-items: center;
         justify-content: center;
         box-sizing: border-box;
-        width: 100%;
-        /* max-width: 21.875rem; */
+        max-width: none;
     }
 
     .disco img {
         width: 100%;
+        /* ocupa todo el ancho del disco */
         height: auto;
+        max-width: none;
+        /* elimina limitación */
         object-fit: cover;
-        display: block;
         border-radius: 0.5rem;
         padding: 0 0.25rem;
-        max-width: 21.875rem;
+        display: block;
     }
 
-    .disco p {
-        font-size: 1rem;
+    .disco img:hover {
+        box-shadow: none;
+        transform: none;
     }
 
     /* Flechas activadas solo en esta vista */
