@@ -115,14 +115,21 @@ en las media queries y solo definir tamaños para cada una*/
     height: 100vh;
 }
 
-/* Secciones */
+/* SECCIONES */
 .seccion {
     position: sticky;
     width: 100%;
     top: 0;
-    /* height: 100vh;  */
+    height: 100vh;
     display: flex;
     align-items: center;
+    overflow: hidden;
+}
+
+.contenido-seccion {
+    flex: 1 0 100%;
+    /*  Por defecto es una columna */
+    margin-top: -2.5rem;
 }
 
 .seccion.activo {
@@ -236,10 +243,6 @@ h2 {
     z-index: 1;
 }
 
-.contenido-seccion {
-    margin-top: -2.5rem;
-}
-
 .panel-historia {
     display: flex;
     align-items: center;
@@ -334,10 +337,10 @@ h2 {
 
 /* SECCIÓN MÚSICA */
 .musica {
-    position: relative;
-    height: 100vh;
-    text-align: center;
+    position: sticky;
+    top: 0;
     overflow: hidden;
+    z-index: 1;
 }
 
 .musica::before {
@@ -348,14 +351,35 @@ h2 {
     background-size: cover;
     background-repeat: no-repeat;
     filter: brightness(0.5);
+    z-index: -1;
+}
+
+.musica .contenido-seccion {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+/* .musica {
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+}
+
+.musica .fondo {
+    position: absolute;
+    inset: 0;
+    background-image: url(img/fondo-musica.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: brightness(0.5);
     z-index: 1;
 }
 
-/* Aseguramos que el contenido esté encima */
 .musica>* {
-    position: relative;
+    position: sticky;
     z-index: 1;
-}
+} */
 
 
 .panel-musica {
@@ -379,7 +403,7 @@ h2 {
 .iframe-Spotify {
     width: 100%;
     border-radius: .625rem;
-    height: 25rem;
+    height: 26rem;
 }
 
 .grid-discos {
@@ -426,6 +450,33 @@ h2 {
     text-transform: uppercase;
     font-weight: bold;
 }
+
+/* SECCIÓN CONCIERTOS */
+.conciertos {
+    height: auto;
+    min-height: 35rem;
+    text-align: center;
+    background: linear-gradient(135deg, #030304, #0c0b18, #0c0b0b);
+    box-shadow: 0 -0.625rem 1.875rem rgba(22, 20, 20, 0.2);
+    z-index: 1;
+}
+
+.panel-conciertos {
+    padding: 1.25rem;
+}
+
+.bit-widget .bit-offers {
+    background-color: #831C18 !important;
+    color: #FFFFFF !important;
+    border-color: #831C18 !important;
+}
+
+.bit-widget .bit-rsvp {
+    color: #FFF !important;
+    border: 1px solid #831C18 !important;
+}
+
+
 
 
 /* Animación */
@@ -521,7 +572,7 @@ h2 {
     }
 
     .musica {
-        min-height: 80rem;
+        min-height: 88rem;
     }
 
     .panel-musica {
@@ -594,6 +645,10 @@ h2 {
         font-size: 2rem;
     }
 
+    /* SECCIÓN CONCIERTOS */
+    .conciertos {
+        min-height: 39rem;
+    }
 
 }
 
@@ -653,6 +708,7 @@ h2 {
     .musica {
         height: 150vh;
         min-height: 80rem;
+        /* overflow: hidden; */
     }
 
     /* SECCIÓN MÚSICA */
@@ -748,5 +804,11 @@ h2 {
 
     .btn-next {
         right: 0.5rem;
+    }
+
+
+    /* SECCIÓN CONCIERTOS */
+    .conciertos {
+        min-height: 40rem;
     }
 }

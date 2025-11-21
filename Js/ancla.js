@@ -1,12 +1,3 @@
-// // Para setear la variable desde el inicio
-// function actualizarHeaderHeight() {
-//     const header = document.querySelector('header');
-//     const headerHeight = header ? header.offsetHeight : 0;
-//     document.documentElement.style.setProperty('--header-height', `${headerHeight}px`);
-// }
-
-// window.addEventListener('DOMContentLoaded', actualizarHeaderHeight);
-// window.addEventListener('resize', actualizarHeaderHeight);
 
 document.querySelectorAll('a[href^="#"]').forEach(link => {
     link.addEventListener('click', e => {
