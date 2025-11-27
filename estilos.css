@@ -128,7 +128,6 @@ en las media queries y solo definir tamaños para cada una*/
 
 .contenido-seccion {
     flex: 1 0 100%;
-    /*  Por defecto es una columna */
     margin-top: -2.5rem;
 }
 
@@ -274,53 +273,6 @@ h2 {
     font-size: 1.6rem;
     color: #edd074;
 }
-
-/* FORMULARIO */
-
-.contacto {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    background-color: #000;
-    top: 0;
-    z-index: 3;
-}
-
-.formulario-contacto {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 .625rem rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 31.25rem;
-}
-
-.campo {
-    margin-bottom: .9375rem;
-}
-
-.campo label {
-    display: block;
-    margin-bottom: .3125rem;
-    color: #555;
-}
-
-.campo input,
-.campo textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: .25rem;
-    font-size: 1rem;
-}
-
-.campo textarea {
-    resize: vertical;
-}
-
 
 /* EFECTO DE ELEMENTOS AL CAMBIAR DE SECCIÓN */
 .elemento {
@@ -477,7 +429,136 @@ h2 {
 }
 
 
+/* SECCIÓN CONTACTO*/
+.contacto {
+    height: auto;
+    min-height: 34rem;
+    text-align: center;
+    background-color: #000;
+    /* FONDO NEGRO */
+    /* background-image: url('img/fondo-contacto.png'); */
+    /* ← pon aquí tu imagen */
+    /* background-position: center;
+    background-size: contain; */
+    /* o cover según el efecto que quieras */
+    /* background-repeat: no-repeat; */
+    padding: 1rem;
+    z-index: 1;
+}
 
+/* 
+ .contacto .contenido-seccion {
+    flex: 0 0 auto;
+    text-align: center;
+}  */
+
+.panel-contacto {
+    display: flex;
+    /* Activa Flexbox */
+    /* align-items: center; */
+    /* Centra verticalmente (opcional) */
+    justify-content: center;
+    /* Centra horizontalmente (opcional) */
+    gap: 2rem;
+    padding: 2rem;
+
+}
+
+.redes-contacto,
+.formulario-contacto {
+    flex: 1;
+    /* Ocupa 50% cada uno */
+}
+
+.redes-contacto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem;
+}
+
+.logo-contacto {
+    display: block;
+    /* bloque para que respete centramiento y márgenes */
+    margin: 20px auto;
+    /* separa de título y formulario automáticamente */
+    max-width: 400px;
+    /* ajusta según quieras */
+    height: auto;
+    /* mantiene proporción */
+}
+
+.barra-vertical {
+    width: 2px;
+    /* Grosor de la barra */
+    height: 250px;
+    /* Alto de la barra */
+    background: linear-gradient(to bottom,
+            #FFFFFF00,
+            /* blanco totalmente transparente */
+            #FFFFFFFF,
+            /* blanco sólido */
+            #FFFFFF00
+            /* blanco totalmente transparente */
+        );
+    border-radius: 2px;
+    /* opcional */
+}
+
+
+
+.formulario-contacto input {
+    font-family: "Oswald", sans-serif;
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+}
+
+.formulario-contacto textarea {
+    font-family: "Oswald", sans-serif;
+    width: 100%;
+    /* ocupa todo el ancho del form */
+    max-width: 100%;
+    /* no se sale del contenedor */
+    min-height: 100px;
+    max-height: 250px;
+    /* altura mínima */
+    padding: 12px;
+    margin: 10px 0;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    background: #fff;
+    color: #000000;
+    height: auto;
+    resize: vertical;
+    /* solo crece hacia abajo */
+    overflow: auto;
+    /* solo permite cambiar alto, no ancho */
+    box-sizing: border-box;
+    overflow-y: auto;
+    /* para que padding no rompa el width */
+}
+
+
+.formulario-contacto button {
+    font-family: "Oswald", sans-serif;
+    font-weight: bold;
+    padding: 12px 25px;
+    background: #831c18;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.3s;
+    margin: 0 auto;
+    display: block;
+}
+
+.formulario-contacto button:hover {
+    background: #5a1d1b;
+}
 
 /* Animación */
 @keyframes fadeInUp {
@@ -702,16 +783,14 @@ h2 {
 
     .historia-texto p {
         font-size: 1.2em;
-        /* Texto un poco más pequeño para móvil */
-    }
-
-    .musica {
-        height: 150vh;
-        min-height: 80rem;
-        /* overflow: hidden; */
     }
 
     /* SECCIÓN MÚSICA */
+    .musica {
+        height: 150vh;
+        min-height: 80rem;
+    }
+
     .musica::before {
         background-position: center;
     }
