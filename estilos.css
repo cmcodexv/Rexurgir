@@ -81,7 +81,6 @@ en las media queries y solo definir tamaños para cada una*/
     position: fixed;
     top: 0;
     right: -100vw;
-    /* Oculto fuera de pantalla */
     width: 100vw;
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.96);
@@ -118,6 +117,7 @@ en las media queries y solo definir tamaños para cada una*/
 /* SECCIONES */
 .seccion {
     position: sticky;
+    align-items: flex-start;
     width: 100%;
     top: 0;
     height: 100vh;
@@ -129,6 +129,7 @@ en las media queries y solo definir tamaños para cada una*/
 .contenido-seccion {
     flex: 1 0 100%;
     margin-top: -2.5rem;
+    /* padding-top: 1rem; */
 }
 
 .seccion.activo {
@@ -312,35 +313,10 @@ h2 {
     text-align: center;
 }
 
-/* .musica {
-    position: relative;
-    text-align: center;
-    overflow: hidden;
-}
-
-.musica .fondo {
-    position: absolute;
-    inset: 0;
-    background-image: url(img/fondo-musica.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    filter: brightness(0.5);
-    z-index: 1;
-}
-
-.musica>* {
-    position: sticky;
-    z-index: 1;
-} */
-
-
 .panel-musica {
     display: flex;
-    /* Activa Flexbox */
     align-items: center;
-    /* Centra verticalmente (opcional) */
     justify-content: center;
-    /* Centra horizontalmente (opcional) */
     gap: .5rem;
     padding: 1rem;
 
@@ -380,6 +356,10 @@ h2 {
     flex-direction: column;
     align-items: center;
     max-width: 10rem;
+}
+
+.disco a {
+    text-decoration: none;
 }
 
 .disco img {
@@ -435,39 +415,20 @@ h2 {
     min-height: 34rem;
     text-align: center;
     background-color: #000;
-    /* FONDO NEGRO */
-    /* background-image: url('img/fondo-contacto.png'); */
-    /* ← pon aquí tu imagen */
-    /* background-position: center;
-    background-size: contain; */
-    /* o cover según el efecto que quieras */
-    /* background-repeat: no-repeat; */
     padding: 1rem;
     z-index: 1;
 }
 
-/* 
- .contacto .contenido-seccion {
-    flex: 0 0 auto;
-    text-align: center;
-}  */
-
 .panel-contacto {
     display: flex;
-    /* Activa Flexbox */
-    /* align-items: center; */
-    /* Centra verticalmente (opcional) */
     justify-content: center;
-    /* Centra horizontalmente (opcional) */
     gap: 2rem;
     padding: 2rem;
-
 }
 
 .redes-contacto,
 .formulario-contacto {
     flex: 1;
-    /* Ocupa 50% cada uno */
 }
 
 .redes-contacto {
@@ -479,33 +440,20 @@ h2 {
 
 .logo-contacto {
     display: block;
-    /* bloque para que respete centramiento y márgenes */
     margin: 20px auto;
-    /* separa de título y formulario automáticamente */
     max-width: 400px;
-    /* ajusta según quieras */
     height: auto;
-    /* mantiene proporción */
 }
 
 .barra-vertical {
     width: 2px;
-    /* Grosor de la barra */
     height: 250px;
-    /* Alto de la barra */
     background: linear-gradient(to bottom,
             #FFFFFF00,
-            /* blanco totalmente transparente */
             #FFFFFFFF,
-            /* blanco sólido */
-            #FFFFFF00
-            /* blanco totalmente transparente */
-        );
+            #FFFFFF00);
     border-radius: 2px;
-    /* opcional */
 }
-
-
 
 .formulario-contacto input {
     font-family: "Oswald", sans-serif;
@@ -519,26 +467,20 @@ h2 {
 .formulario-contacto textarea {
     font-family: "Oswald", sans-serif;
     width: 100%;
-    /* ocupa todo el ancho del form */
     max-width: 100%;
-    /* no se sale del contenedor */
     min-height: 100px;
     max-height: 250px;
-    /* altura mínima */
     padding: 12px;
     margin: 10px 0;
     border: 2px solid #fff;
     border-radius: 5px;
     background: #fff;
-    color: #000000;
+    color: #000;
     height: auto;
     resize: vertical;
-    /* solo crece hacia abajo */
     overflow: auto;
-    /* solo permite cambiar alto, no ancho */
     box-sizing: border-box;
     overflow-y: auto;
-    /* para que padding no rompa el width */
 }
 
 
@@ -559,6 +501,27 @@ h2 {
 .formulario-contacto button:hover {
     background: #5a1d1b;
 }
+
+
+/* FOOTER */
+.footer {
+    position: relative;
+    text-align: center;
+    /* Centra el texto */
+    padding: 15px 0;
+    background-color: #000000;
+    /* Cambia el color si quieres */
+    color: #fff;
+    font-size: 14px;
+    width: 100%;
+    z-index: 1;
+}
+
+.footer p {
+    margin: 0;
+    font-family: "Oswald", sans-serif;
+}
+
 
 /* Animación */
 @keyframes fadeInUp {
