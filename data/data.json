@@ -1,0 +1,54 @@
+{
+    "hero": {
+        "video": "vid/home.mp4",
+        "imagen": "img/logo.png"
+    },
+    "historia": {
+        "texto": "Formada en el año 2019 en los suburbios de Managua, Rexurgir nació de la necesidad de expresar el descontento con un sistema que no escucha. Influenciados por el punk de los '80, el hardcore neoyorquino y las escenas locales underground, comenzaron tocando en garajes, centros culturales y bares donde podían armar un set rápido y ruidoso\n\nLa banda encontró su identidad en la energía cruda del directo, letras cargadas de rabia y un sonido veloz y agresivo. A lo largo de los años, lanzaron dos EPs y un álbum de estudio que los llevó a girar por varias ciudades del país, siempre fieles a su ética DIY (hazlo tú mismo) y a la comunidad que los vio crecer.",
+        "imagen": "img/historia.jpeg"
+    },
+    "musica": {
+        "discos": [
+            {
+                "titulo": "Anima",
+                "imagen": "img/anima.jpg",
+                "url": "https://www.youtube.com/watch?v=6BX7Up5tvrk"
+            },
+            {
+                "titulo": "Abismo",
+                "imagen": "img/abismo.jpg",
+                "url": "https://www.youtube.com/watch?v=L-yOhzPzfzo"
+            },
+            {
+                "titulo": "Crecer",
+                "imagen": "img/crecer.jpg",
+                "url": "https://www.youtube.com/watch?v=nEcEs7i9nyc"
+            },
+            {
+                "titulo": "Doppelgänger",
+                "imagen": "img/doppelgänger.jpg",
+                "url": "https://www.youtube.com/watch?v=m27ebtIKjXQ"
+            },
+            {
+                "titulo": "Ciegos sin razón",
+                "imagen": "img/ciegos-sin-razon.jpg",
+                "url": "https://www.youtube.com/watch?v=sjJLNawDn-E"
+            },
+            {
+                "titulo": "Números en la memoria",
+                "imagen": "img/numeros-en-la-memoria.jpeg",
+                "url": "https://www.youtube.com/watch?v=T_T09Q2BFTU"
+            }
+        ]
+    },
+    "contacto": {
+        "logo": "img/logo-letras.png",
+        "email": "cmaradiaga715@gmail.com"
+    },
+    "redes": {
+        "facebook": "https://www.facebook.com/RexurgirHC",
+        "instagram": "https://www.instagram.com/rexurgir_hc",
+        "spotify": "https://open.spotify.com/intl-es/artist/1E6vfz0cfHNQIJNtUf2irN",
+        "youtube": "https://www.youtube.com/@rexurgirhc3478"
+    }
+}

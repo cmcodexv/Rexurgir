@@ -55,49 +55,33 @@
     <!-- Contenedor principal con el fondo de video -->
     <section id="portada" class="seccion portada">
         <!-- Video de fondo -->
-        <video autoplay muted loop class="background-video">
-            <source src="vid/home.mp4" type="video/mp4">
+        <video id="video-portada" autoplay muted loop playsinline class="background-video">
+            <source id="video-source" type="video/mp4">
             Tu navegador no soporta el video.
         </video>
 
         <!-- Logo en el centro -->
         <div class="logo">
-            <img src="img/logo.png" alt="Logo">
+            <img id="hero-imagen" alt="Logo">
         </div>
 
         <!-- Plataformas musicales abajo -->
         <div class="platforms">
-            <a href="https://www.facebook.com/RexurgirHC" target="_blank" class="facebook"><i
-                    class="fab fa-facebook-f"></i></a>
-            <a href="https://www.instagram.com/rexurgir_hc" target="_blank" class="instagram"><i
-                    class="fab fa-instagram"></i></a>
-            <a href="https://open.spotify.com/intl-es/artist/1E6vfz0cfHNQIJNtUf2irN?si=YwlAuOCjQVqi51MTQNwckA"
-                target="_blank" class="spotify"><i class="fa-brands fa-spotify"></i></a>
-            <a href="https://www.youtube.com/@rexurgirhc3478" target="_blank" class="youtube"><i
-                    class="fa-brands fa-youtube"></i></a>
+            <a class="social-link facebook" data-red="facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a class="social-link instagram" data-red="instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a class="social-link spotify" data-red="spotify" target="_blank"><i class="fa-brands fa-spotify"></i></a>
+            <a class="social-link youtube" data-red="youtube" target="_blank"><i class="fa-brands fa-youtube"></i></a>
         </div>
-        <!-- Botón "Saber más" para bajar a la siguiente sección -->
-        <!-- <a href="#next-section" class="more-info-button">Saber más</a> -->
     </section>
     <section id="historia" class="seccion historia">
         <div class="contenido-seccion">
             <h2>HISTORIA</h2>
             <div class="panel-historia paused">
                 <div class="historia-imagen elemento">
-                    <img rel="preload" src="img/historia.jpeg" alt="Historia">
+                    <img rel="preload" id="historia-imagen" alt="Historia">
                 </div>
                 <div class="historia-texto elemento">
-                    <p>Formada en el año 2019 en los suburbios de Managua, Rexurgir nació de la necesidad de expresar
-                        el descontento con un sistema que no escucha. Influenciados por el punk de los '80, el hardcore
-                        neoyorquino y las escenas locales underground, comenzaron tocando en garajes, centros culturales
-                        y
-                        bares donde podían armar un set rápido y ruidoso. <br><br>
-                        La banda encontró su identidad en la energía cruda del directo, letras cargadas de rabia y un
-                        sonido
-                        veloz y agresivo. A lo largo de los años, lanzaron dos EPs y un álbum de estudio que los llevó a
-                        girar por varias ciudades del país, siempre fieles a su ética DIY (hazlo tú mismo) y a la
-                        comunidad
-                        que los vio crecer.</p>
+                    <p id="historia-texto"></p>
                 </div>
             </div>
         </div>
@@ -113,7 +97,7 @@
                 <div class="musica-spotify elemento">
                     <iframe data-testid="embed-iframe" class="iframe-Spotify"
                         src="https://open.spotify.com/embed/artist/1E6vfz0cfHNQIJNtUf2irN?utm_source=generator&theme=0"
-                        frameBorder="0" allowfullscreen=""
+                        frameBorder="0"
                         allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                         loading="lazy"></iframe>
                 </div>
@@ -123,44 +107,7 @@
                     <button class="btn-prev">
                         <i class="fa-solid fa-chevron-left"></i>
                     </button>
-                    <div class="grid-discos">
-                        <div class="disco">
-                            <a href="https://www.youtube.com/watch?v=6BX7Up5tvrk" target="_blank">
-                                <img src="img/anima.jpg" alt="Anima">
-                                <p>Anima</p>
-                            </a>
-                        </div>
-                        <div class="disco">
-                            <a href="https://www.youtube.com/watch?v=L-yOhzPzfzo" target="_blank">
-                                <img src="img/abismo.jpg" alt="Abismo">
-                                <p>Abismo</p>
-                            </a>
-                        </div>
-                        <div class="disco">
-                            <a href="https://www.youtube.com/watch?v=nEcEs7i9nyc" target="_blank">
-                                <img src="img/crecer.jpg" alt="Crecer">
-                                <p>Crecer</p>
-                            </a>
-                        </div>
-                        <div class="disco">
-                            <a href="https://www.youtube.com/watch?v=m27ebtIKjXQ" target="_blank">
-                                <img src="img/doppelgänger.jpg" alt="Doppelgänger">
-                                <p>Doppelgänger</p>
-                            </a>
-                        </div>
-                        <div class="disco">
-                            <a href="https://www.youtube.com/watch?v=sjJLNawDn-E" target="_blank">
-                                <img src="img/ciegos-sin-razon.jpg" alt="Ciegos • Sin Razón">
-                                <p>Ciegos sin razón</p>
-                            </a>
-                        </div>
-                        <div class="disco">
-                            <a href="https://www.youtube.com/watch?v=T_T09Q2BFTU" target="_blank">
-                                <img src="img/numeros-en-la-memoria.jpeg" alt="Números en la memoria">
-                                <p>Números en la memoria</p>
-                            </a>
-                        </div>
-                    </div>
+                    <div class="grid-discos" id="grid-discos"></div>
                     <button class="btn-next">
                         <i class="fa-solid fa-chevron-right"></i>
                     </button>
@@ -189,26 +136,36 @@
             <h2>CONTACTO</h2>
             <div class="panel-contacto paused">
                 <div class="redes-contacto">
-                    <img src="img/logo-letras.png" alt="Logo de la banda" class="logo-contacto">
+                    <img id="logo-contacto" alt="Logo de la banda" class="logo-contacto">
                     <div class="platforms">
-                        <a href="https://www.facebook.com/RexurgirHC" target="_blank" class="facebook"><i
+                        <a class="social-link facebook" data-red="facebook" target="_blank"><i
                                 class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.instagram.com/rexurgir_hc" target="_blank" class="instagram"><i
+                        <a class="social-link instagram" data-red="instagram" target="_blank"><i
                                 class="fab fa-instagram"></i></a>
-                        <a href="https://open.spotify.com/intl-es/artist/1E6vfz0cfHNQIJNtUf2irN?si=YwlAuOCjQVqi51MTQNwckA"
-                            target="_blank" class="spotify"><i class="fa-brands fa-spotify"></i></a>
-                        <a href="https://www.youtube.com/@rexurgirhc3478" target="_blank" class="youtube"><i
+                        <a class="social-link spotify" data-red="spotify" target="_blank"><i
+                                class="fa-brands fa-spotify"></i></a>
+                        <a class="social-link youtube" data-red="youtube" target="_blank"><i
                                 class="fa-brands fa-youtube"></i></a>
                     </div>
                 </div>
                 <div class="barra-vertical"></div>
                 <div class="formulario-contacto">
-                    <form action="#" method="post">
+                    <!-- <form action="#" method="post">
+                        <input type="text" name="nombre" placeholder="Tu nombre" required>
+                        <input type="email" name="email" placeholder="Tu email" required>
+                        <textarea name="mensaje" placeholder="Tu mensaje" required></textarea>
+                        <button type="submit">ENVIAR</button>
+                    </form> -->
+
+                    <form name="contacto" method="POST" data-netlify="true" id="form-contacto">
                         <input type="text" name="nombre" placeholder="Tu nombre" required>
                         <input type="email" name="email" placeholder="Tu email" required>
                         <textarea name="mensaje" placeholder="Tu mensaje" required></textarea>
                         <button type="submit">ENVIAR</button>
                     </form>
+
+                    <p id="estado-formulario"></p>
+
                 </div>
             </div>
         </div>
@@ -218,6 +175,7 @@
     </footer>
 </body>
 <!-- JS -->
+<script src="js/data-loader.js" defer></script>
 <script src="js/header.js" defer></script>
 <script src="js/menu.js" defer></script>
 <script src="js/revelar.js" defer></script>
