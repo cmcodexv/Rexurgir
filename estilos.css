@@ -505,6 +505,7 @@ h2 {
 #estado-formulario {
     color: #fff;
     margin-top: 10px;
+    font-family: "Oswald", sans-serif;
     font-weight: bold;
 }
 
@@ -513,10 +514,8 @@ h2 {
 .footer {
     position: relative;
     text-align: center;
-    /* Centra el texto */
     padding: 15px 0;
     background-color: #000000;
-    /* Cambia el color si quieres */
     color: #fff;
     font-size: 14px;
     width: 100%;

@@ -38,7 +38,7 @@ function cargarDiscos(discos) {
         div.classList.add("disco");
 
         div.innerHTML = `
-      <a href="${disco.link}" target="_blank">
+      <a href="${disco.url}" target="_blank">
         <img src="${disco.imagen}" alt="${disco.titulo}">
         <p>${disco.titulo}</p>
       </a>
