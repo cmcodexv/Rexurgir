@@ -502,6 +502,12 @@ h2 {
     background: #5a1d1b;
 }
 
+#estado-formulario {
+    color: #fff;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
 
 /* FOOTER */
 .footer {
